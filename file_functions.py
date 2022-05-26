@@ -8,7 +8,7 @@ def find_files(path: str, extensions: list[str] = None) -> list[str]:
     with os.scandir(path) as i:
         for entry in i:
             if entry.is_file():
-                file_path = entry.path
+                file_path = os.path.normpath(entry.path)
                 if extensions is not None:
                     file_ext = os.path.splitext(file_path)[1].lower()
                     if file_ext in extensions:
