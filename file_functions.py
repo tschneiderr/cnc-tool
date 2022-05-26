@@ -2,14 +2,14 @@ import os
 import re
 
 
-def find_files(path: str, extensions: list[str] = None) -> list[str]:
+def find_files(path: str, extensions: list[str] = []) -> list[str]:
     """Find files in path, non-recursively"""
     files = []
     with os.scandir(path) as i:
         for entry in i:
             if entry.is_file():
                 file_path = os.path.normpath(entry.path)
-                if extensions is not None:
+                if extensions:
                     file_ext = os.path.splitext(file_path)[1].lower()
                     if file_ext in extensions:
                         files.append(file_path)
@@ -18,13 +18,13 @@ def find_files(path: str, extensions: list[str] = None) -> list[str]:
     return files
 
 
-def find_files_recursively(path: str, extensions: list[str] = None) -> list[str]:
+def find_files_recursively(path: str, extensions: list[str] = []) -> list[str]:
     """Find files in path, recursively"""
     files = []
     for root, _, files in os.walk(path):
         for file in files:
             file_path = os.path.join(root, file)
-            if extensions is not None:
+            if extensions:
                 file_ext = os.path.splitext(file_path)[1].lower()
                 if file_ext in extensions:
                     files.append(file_path)
