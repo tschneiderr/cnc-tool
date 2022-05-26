@@ -15,7 +15,6 @@ def find_files(path: str, extensions: list[str] = None) -> list[str]:
                         files.append(file_path)
                 else:
                     files.append(file_path)
-    files.sort()
     return files
 
 
@@ -31,7 +30,6 @@ def find_files_recursively(path: str, extensions: list[str] = None) -> list[str]
                     files.append(file_path)
             else:
                 files.append(file_path)
-    files.sort()
     return files
 
 
