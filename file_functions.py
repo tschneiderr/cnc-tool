@@ -18,21 +18,6 @@ def find_files(path: str, extensions: list[str] = []) -> list[str]:
     return files
 
 
-def find_files_recursively(path: str, extensions: list[str] = []) -> list[str]:
-    """Find files in path, recursively"""
-    files = []
-    for root, _, files in os.walk(path):
-        for file in files:
-            file_path = os.path.join(root, file)
-            if extensions:
-                file_ext = os.path.splitext(file_path)[1].lower()
-                if file_ext in extensions:
-                    files.append(file_path)
-            else:
-                files.append(file_path)
-    return files
-
-
 def number_lines(text: str, start_number: int, step: int) -> str:
     """Number CNC lines increasingly"""
     if not text:
