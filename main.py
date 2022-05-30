@@ -40,7 +40,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         opened_file_path, _ = QFileDialog.getOpenFileName(self)
         if not opened_file_path:
             return
-        self.file_path = opened_file_path
+        self.file_path = os.path.normpath(opened_file_path)
         self.le_file_path.setText(self.file_path)
         self.load_file()
 
@@ -88,11 +88,11 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         save_file_path, _ = QFileDialog.getSaveFileName(self)
         if not save_file_path:
             return
-        current_text = self.pte_file_preview.toPlainText()
-        with open(save_file_path, "w", encoding="utf-8") as file:
-            file.write(current_text)
-        self.file_path = save_file_path
+        self.file_path = os.path.normpath(save_file_path)
         self.le_file_path.setText(self.file_path)
+        current_text = self.pte_file_preview.toPlainText()
+        with open(self.file_path, "w", encoding="utf-8") as file:
+            file.write(current_text)
 
 
 def main():
