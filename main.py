@@ -8,7 +8,7 @@ from PySide6.QtWidgets import QApplication, QFileDialog, QLabel, QMainWindow
 import file_functions
 from MainWindow import Ui_MainWindow
 
-VERSION = "0.1.0"
+VERSION = "0.2.0-dev"
 
 
 class MainWindow(QMainWindow, Ui_MainWindow):
