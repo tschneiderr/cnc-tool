@@ -21,6 +21,8 @@ class MainWindow(QMainWindow, Ui_MainWindow):
 
         self.file_path = ""
         self.file_contents = ""
+        self.folder_path = ""
+        self.folder_contents = []
 
     def display_statusbar_info(self):
         self.statusbar.addPermanentWidget(QLabel(" Made by T. Schneider "))
@@ -37,6 +39,28 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         self.pb_save_file_as.clicked.connect(self.save_file_as)
         self.pb_save_file.clicked.connect(self.save_file)
         self.tb_reload_file.clicked.connect(self.load_file)
+
+        self.pb_open_folder.clicked.connect(self.open_folder)
+        self.tb_reload_folder.clicked.connect(self.load_folder)
+
+    def open_folder(self):
+        opened_folder_path = QFileDialog.getExistingDirectory(self)
+        if not opened_folder_path:
+            return
+        self.folder_path = os.path.normpath(opened_folder_path)
+        self.le_folder_path.setText(self.folder_path)
+        self.load_folder()
+
+    def load_folder(self):
+        if not self.folder_path:
+            return
+        self.folder_contents = file_functions.find_files(self.folder_path)
+        if not self.folder_contents:
+            self.pte_folder_preview.setPlainText("No files found!")
+            return
+        self.pte_folder_preview.clear()
+        for entry in self.folder_contents:
+            self.pte_folder_preview.appendPlainText(os.path.basename(entry))
 
     def open_file(self):
         opened_file_path, _ = QFileDialog.getOpenFileName(self)
