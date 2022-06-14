@@ -23,6 +23,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         self.file_contents = ""
 
     def display_statusbar_info(self):
+        self.statusbar.addPermanentWidget(QLabel(" Made by T. Schneider "))
         self.statusbar.addPermanentWidget(QLabel(f" v{VERSION} "))
 
     def connect_signals_slots(self):
