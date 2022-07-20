@@ -33,19 +33,18 @@ def number_lines(text: str, start_number: int, step: int) -> str:
     return "\n".join(lines) + "\n"
 
 
-def number_ids(text: str, start_number: int, step: int, line_comment_char: str) -> str:
-    """Number IDS increasingly, ignore commented lines"""
+def number_ids(text: str, start_number: int, step: int) -> str:
+    """Number IDS lines increasingly"""
     if not text:
         return ""
     pattern = r"\bIDS=\d+\b"
     current_number = start_number
     lines = text.splitlines()
     for i, line in enumerate(lines):
-        if not line.startswith(line_comment_char):
-            repl = f"IDS={current_number}"
-            lines[i], count = re.subn(pattern, repl, line)
-            if count:
-                current_number += step
+        repl = f"IDS={current_number}"
+        lines[i], count = re.subn(pattern, repl, line)
+        if count:
+            current_number += step
     return "\n".join(lines) + "\n"
 
 

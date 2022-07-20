@@ -91,7 +91,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         current_text = self.pte_file_preview.toPlainText()
         start_number = self.sb_number_ids_start.value()
         step = self.sb_number_ids_step.value()
-        new_text = file_functions.number_ids(current_text, start_number, step, ";")
+        new_text = file_functions.number_ids(current_text, start_number, step)
         self.pte_file_preview.setPlainText(new_text)
 
     def convert_tabs_to_spaces(self):
