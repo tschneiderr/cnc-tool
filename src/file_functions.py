@@ -2,22 +2,6 @@ import os
 import re
 
 
-def find_files(path: str, extensions: list[str] = []) -> list[str]:
-    """Find files in path, non-recursively"""
-    files = []
-    with os.scandir(path) as i:
-        for entry in i:
-            if entry.is_file():
-                file_path = os.path.normpath(entry.path)
-                if extensions:
-                    file_ext = os.path.splitext(file_path)[1].lower()
-                    if file_ext in extensions:
-                        files.append(file_path)
-                else:
-                    files.append(file_path)
-    return files
-
-
 def number_lines(text: str, start_number: int, step: int) -> str:
     """Number CNC lines increasingly"""
     if not text:
