@@ -2,7 +2,7 @@ import os
 import sys
 
 from PySide6.QtCore import Qt
-from PySide6.QtGui import QGuiApplication
+from PySide6.QtGui import QFontDatabase, QGuiApplication
 from PySide6.QtWidgets import QApplication, QFileDialog, QLabel, QMainWindow
 
 import file_functions
@@ -15,6 +15,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
     def __init__(self):
         super().__init__()
 
+        self.setup_fonts()
         self.setupUi(self)
         self.display_statusbar_info()
         self.connect_signals_slots()
@@ -42,6 +43,9 @@ class MainWindow(QMainWindow, Ui_MainWindow):
 
         self.pb_open_folder.clicked.connect(self.open_folder)
         self.tb_reload_folder.clicked.connect(self.load_folder)
+
+    def setup_fonts(self):
+        QFontDatabase.addApplicationFont("fonts/CascadiaMono-Light.ttf")
 
     def open_folder(self):
         opened_folder_path = QFileDialog.getExistingDirectory(self)
