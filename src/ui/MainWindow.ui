@@ -27,7 +27,44 @@
        <layout class="QVBoxLayout" name="verticalLayout_2">
         <item>
          <layout class="QGridLayout" name="gridLayout">
-          <item row="1" column="0" rowspan="5">
+          <item row="5" column="1" colspan="2">
+           <widget class="QPushButton" name="pb_save_file_as">
+            <property name="font">
+             <font>
+              <bold>true</bold>
+             </font>
+            </property>
+            <property name="text">
+             <string>Save File As</string>
+            </property>
+           </widget>
+          </item>
+          <item row="6" column="1" colspan="2">
+           <spacer name="vs_functions_2">
+            <property name="orientation">
+             <enum>Qt::Vertical</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>0</width>
+              <height>0</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
+          <item row="4" column="1" colspan="2">
+           <widget class="QPushButton" name="pb_save_file">
+            <property name="font">
+             <font>
+              <bold>true</bold>
+             </font>
+            </property>
+            <property name="text">
+             <string>Save File</string>
+            </property>
+           </widget>
+          </item>
+          <item row="1" column="0" rowspan="6">
            <widget class="QPlainTextEdit" name="pte_file_preview">
             <property name="font">
              <font>
@@ -43,31 +80,6 @@
             </property>
             <property name="placeholderText">
              <string>File Preview / Manual Input</string>
-            </property>
-           </widget>
-          </item>
-          <item row="5" column="1" colspan="2">
-           <spacer name="vs_functions_2">
-            <property name="orientation">
-             <enum>Qt::Vertical</enum>
-            </property>
-            <property name="sizeHint" stdset="0">
-             <size>
-              <width>0</width>
-              <height>0</height>
-             </size>
-            </property>
-           </spacer>
-          </item>
-          <item row="3" column="1" colspan="2">
-           <widget class="QPushButton" name="pb_save_file">
-            <property name="font">
-             <font>
-              <bold>true</bold>
-             </font>
-            </property>
-            <property name="text">
-             <string>Save File</string>
             </property>
            </widget>
           </item>
@@ -101,17 +113,21 @@
             </property>
            </widget>
           </item>
-          <item row="0" column="2">
-           <widget class="QPushButton" name="pb_open_file">
-            <property name="font">
-             <font>
-              <bold>true</bold>
-             </font>
+          <item row="3" column="1" colspan="2">
+           <spacer name="vs_functions_1">
+            <property name="orientation">
+             <enum>Qt::Vertical</enum>
             </property>
-            <property name="text">
-             <string>Open File</string>
+            <property name="sizeType">
+             <enum>QSizePolicy::Fixed</enum>
             </property>
-           </widget>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>0</width>
+              <height>10</height>
+             </size>
+            </property>
+           </spacer>
           </item>
           <item row="1" column="1" colspan="2">
            <widget class="QGroupBox" name="gb_functions">
@@ -307,32 +323,32 @@
             </layout>
            </widget>
           </item>
-          <item row="2" column="1" colspan="2">
-           <spacer name="vs_functions_1">
-            <property name="orientation">
-             <enum>Qt::Vertical</enum>
-            </property>
-            <property name="sizeType">
-             <enum>QSizePolicy::Fixed</enum>
-            </property>
-            <property name="sizeHint" stdset="0">
-             <size>
-              <width>0</width>
-              <height>10</height>
-             </size>
-            </property>
-           </spacer>
-          </item>
-          <item row="4" column="1" colspan="2">
-           <widget class="QPushButton" name="pb_save_file_as">
+          <item row="0" column="2">
+           <widget class="QPushButton" name="pb_open_file">
             <property name="font">
              <font>
               <bold>true</bold>
              </font>
             </property>
             <property name="text">
-             <string>Save File As</string>
+             <string>Open File</string>
             </property>
+           </widget>
+          </item>
+          <item row="2" column="1" colspan="2">
+           <widget class="QGroupBox" name="gb_options">
+            <property name="title">
+             <string>Options</string>
+            </property>
+            <layout class="QVBoxLayout" name="verticalLayout_4">
+             <item>
+              <widget class="QCheckBox" name="cb_ignore_comments">
+               <property name="text">
+                <string>Ignore Comments</string>
+               </property>
+              </widget>
+             </item>
+            </layout>
            </widget>
           </item>
          </layout>
@@ -346,6 +362,28 @@
        <layout class="QVBoxLayout" name="verticalLayout_3">
         <item>
          <layout class="QGridLayout" name="gridLayout_3">
+          <item row="1" column="0" rowspan="3">
+           <widget class="QPlainTextEdit" name="pte_folder_preview">
+            <property name="font">
+             <font>
+              <family>Cascadia Mono Light</family>
+              <pointsize>10</pointsize>
+             </font>
+            </property>
+            <property name="lineWrapMode">
+             <enum>QPlainTextEdit::NoWrap</enum>
+            </property>
+            <property name="readOnly">
+             <bool>true</bool>
+            </property>
+            <property name="tabStopDistance">
+             <double>40.000000000000000</double>
+            </property>
+            <property name="placeholderText">
+             <string>Folder Preview</string>
+            </property>
+           </widget>
+          </item>
           <item row="0" column="0">
            <widget class="QLineEdit" name="le_folder_path">
             <property name="font">
@@ -358,33 +396,6 @@
             </property>
             <property name="placeholderText">
              <string>Folder Path</string>
-            </property>
-           </widget>
-          </item>
-          <item row="0" column="1">
-           <widget class="QToolButton" name="tb_reload_folder">
-            <property name="font">
-             <font>
-              <pointsize>10</pointsize>
-             </font>
-            </property>
-            <property name="toolTip">
-             <string>Reload Folder</string>
-            </property>
-            <property name="text">
-             <string>⭮</string>
-            </property>
-           </widget>
-          </item>
-          <item row="0" column="2">
-           <widget class="QPushButton" name="pb_open_folder">
-            <property name="font">
-             <font>
-              <bold>true</bold>
-             </font>
-            </property>
-            <property name="text">
-             <string>Open Folder</string>
             </property>
            </widget>
           </item>
@@ -582,7 +593,7 @@
             </layout>
            </widget>
           </item>
-          <item row="2" column="1" colspan="2">
+          <item row="3" column="1" colspan="2">
            <spacer name="verticalSpacer">
             <property name="orientation">
              <enum>Qt::Vertical</enum>
@@ -595,26 +606,47 @@
             </property>
            </spacer>
           </item>
-          <item row="1" column="0" rowspan="2">
-           <widget class="QPlainTextEdit" name="pte_folder_preview">
+          <item row="0" column="1">
+           <widget class="QToolButton" name="tb_reload_folder">
             <property name="font">
              <font>
-              <family>Cascadia Mono Light</family>
               <pointsize>10</pointsize>
              </font>
             </property>
-            <property name="lineWrapMode">
-             <enum>QPlainTextEdit::NoWrap</enum>
+            <property name="toolTip">
+             <string>Reload Folder</string>
             </property>
-            <property name="readOnly">
-             <bool>true</bool>
+            <property name="text">
+             <string>⭮</string>
             </property>
-            <property name="tabStopDistance">
-             <double>40.000000000000000</double>
+           </widget>
+          </item>
+          <item row="0" column="2">
+           <widget class="QPushButton" name="pb_open_folder">
+            <property name="font">
+             <font>
+              <bold>true</bold>
+             </font>
             </property>
-            <property name="placeholderText">
-             <string>Folder Preview</string>
+            <property name="text">
+             <string>Open Folder</string>
             </property>
+           </widget>
+          </item>
+          <item row="2" column="1" colspan="2">
+           <widget class="QGroupBox" name="gb_options_2">
+            <property name="title">
+             <string>Options</string>
+            </property>
+            <layout class="QVBoxLayout" name="verticalLayout_5">
+             <item>
+              <widget class="QCheckBox" name="cb_ignore_comments_2">
+               <property name="text">
+                <string>Ignore Comments</string>
+               </property>
+              </widget>
+             </item>
+            </layout>
            </widget>
           </item>
          </layout>
