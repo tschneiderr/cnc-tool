@@ -63,15 +63,18 @@ class Ui_MainWindow(object):
 
         self.le_file_path = QLineEdit(self.tab_file_mode)
         self.le_file_path.setObjectName(u"le_file_path")
+        font2 = QFont()
+        font2.setFamilies([u"Cascadia Mono Light"])
+        self.le_file_path.setFont(font2)
         self.le_file_path.setReadOnly(True)
 
         self.gridLayout.addWidget(self.le_file_path, 0, 0, 1, 1)
 
         self.tb_reload_file = QToolButton(self.tab_file_mode)
         self.tb_reload_file.setObjectName(u"tb_reload_file")
-        font2 = QFont()
-        font2.setPointSize(10)
-        self.tb_reload_file.setFont(font2)
+        font3 = QFont()
+        font3.setPointSize(10)
+        self.tb_reload_file.setFont(font3)
 
         self.gridLayout.addWidget(self.tb_reload_file, 0, 1, 1, 1)
 
@@ -226,13 +229,14 @@ class Ui_MainWindow(object):
         self.gridLayout_3.setObjectName(u"gridLayout_3")
         self.le_folder_path = QLineEdit(self.tab_folder_mode)
         self.le_folder_path.setObjectName(u"le_folder_path")
+        self.le_folder_path.setFont(font2)
         self.le_folder_path.setReadOnly(True)
 
         self.gridLayout_3.addWidget(self.le_folder_path, 0, 0, 1, 1)
 
         self.tb_reload_folder = QToolButton(self.tab_folder_mode)
         self.tb_reload_folder.setObjectName(u"tb_reload_folder")
-        self.tb_reload_folder.setFont(font2)
+        self.tb_reload_folder.setFont(font3)
 
         self.gridLayout_3.addWidget(self.tb_reload_folder, 0, 1, 1, 1)
 
