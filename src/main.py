@@ -25,6 +25,9 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         self.folder_path = ""
         self.folder_contents = []
 
+    def setup_fonts(self):
+        QFontDatabase.addApplicationFont("fonts/CascadiaMono-Light.ttf")
+
     def display_statusbar_info(self):
         self.statusbar.addPermanentWidget(QLabel(" Made by T. Schneider "))
         self.statusbar.addPermanentWidget(QLabel(f" v{VERSION} "))
@@ -43,9 +46,6 @@ class MainWindow(QMainWindow, Ui_MainWindow):
 
         self.pb_open_folder.clicked.connect(self.open_folder)
         self.tb_reload_folder.clicked.connect(self.load_folder)
-
-    def setup_fonts(self):
-        QFontDatabase.addApplicationFont("fonts/CascadiaMono-Light.ttf")
 
     def open_folder(self):
         opened_folder_path = QFileDialog.getExistingDirectory(self)
