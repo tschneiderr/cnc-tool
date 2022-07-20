@@ -22,7 +22,7 @@ def number_lines(text: str, start_number: int, step: int) -> str:
     """Number CNC lines increasingly"""
     if not text:
         return ""
-    pattern = r"^N\d+"
+    pattern = r"\bN\d+\b"
     current_number = start_number
     lines = text.splitlines()
     for i, line in enumerate(lines):
@@ -37,7 +37,7 @@ def number_ids(text: str, start_number: int, step: int, line_comment_char: str) 
     """Number IDS increasingly, ignore commented lines"""
     if not text:
         return ""
-    pattern = r"IDS=\d+"
+    pattern = r"\bIDS=\d+\b"
     current_number = start_number
     lines = text.splitlines()
     for i, line in enumerate(lines):
