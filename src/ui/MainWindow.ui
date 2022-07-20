@@ -73,6 +73,11 @@
           </item>
           <item row="0" column="0">
            <widget class="QLineEdit" name="le_file_path">
+            <property name="font">
+             <font>
+              <family>Cascadia Mono Light</family>
+             </font>
+            </property>
             <property name="readOnly">
              <bool>true</bool>
             </property>
@@ -343,6 +348,11 @@
          <layout class="QGridLayout" name="gridLayout_3">
           <item row="0" column="0">
            <widget class="QLineEdit" name="le_folder_path">
+            <property name="font">
+             <font>
+              <family>Cascadia Mono Light</family>
+             </font>
+            </property>
             <property name="readOnly">
              <bool>true</bool>
             </property>
