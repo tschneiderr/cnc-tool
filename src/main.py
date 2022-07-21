@@ -76,14 +76,24 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         current_text = self.pte_file_preview.toPlainText()
         start_number = self.sb_number_lines_start.value()
         step = self.sb_number_lines_step.value()
-        new_text = file_functions.number_lines(current_text, start_number, step)
+        if self.cb_ignore_comments.isChecked():
+            new_text = file_functions.number_lines_wo_comment(
+                current_text, start_number, step, ";"
+            )
+        else:
+            new_text = file_functions.number_lines(current_text, start_number, step)
         self.pte_file_preview.setPlainText(new_text)
 
     def number_ids(self):
         current_text = self.pte_file_preview.toPlainText()
         start_number = self.sb_number_ids_start.value()
         step = self.sb_number_ids_step.value()
-        new_text = file_functions.number_ids(current_text, start_number, step)
+        if self.cb_ignore_comments.isChecked():
+            new_text = file_functions.number_ids_wo_comment(
+                current_text, start_number, step, ";"
+            )
+        else:
+            new_text = file_functions.number_ids(current_text, start_number, step)
         self.pte_file_preview.setPlainText(new_text)
 
     def convert_tabs_to_spaces(self):
