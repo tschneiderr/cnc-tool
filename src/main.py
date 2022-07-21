@@ -56,15 +56,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         self.load_folder()
 
     def load_folder(self):
-        if not self.folder_path:
-            return
-        self.folder_contents = file_functions.find_files(self.folder_path)
-        if not self.folder_contents:
-            self.pte_folder_preview.setPlainText("No files found!")
-            return
-        self.pte_folder_preview.clear()
-        for entry in self.folder_contents:
-            self.pte_folder_preview.appendPlainText(os.path.basename(entry))
+        pass
 
     def open_file(self):
         opened_file_path, _ = QFileDialog.getOpenFileName(self)
