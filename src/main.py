@@ -105,6 +105,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         current_text = self.pte_file_preview.toPlainText()
         with open(save_file_path, "w", encoding="utf-8") as file:
             file.write(current_text)
+        self.statusbar.showMessage("File Saved!", 2000)
 
     def save_file_as(self):
         save_file_path, _ = QFileDialog.getSaveFileName(self)
@@ -115,6 +116,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         current_text = self.pte_file_preview.toPlainText()
         with open(self.file_path, "w", encoding="utf-8") as file:
             file.write(current_text)
+        self.statusbar.showMessage("File Saved!", 2000)
 
 
 def main():
