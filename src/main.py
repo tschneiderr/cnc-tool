@@ -9,7 +9,7 @@ from PySide6.QtWidgets import QApplication, QFileDialog, QLabel, QMainWindow
 import file_functions
 from ui.MainWindow import Ui_MainWindow
 
-VERSION = "0.2.0"
+VERSION = "0.3.0"
 
 
 class MainWindow(QMainWindow, Ui_MainWindow):
