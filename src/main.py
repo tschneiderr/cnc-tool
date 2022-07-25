@@ -21,7 +21,6 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         self.connect_signals_slots()
 
         self.file_path = ""
-        self.file_contents = ""
         self.folder_path = ""
         self.folder_contents = []
 
