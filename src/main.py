@@ -33,16 +33,16 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         self.statusbar.addPermanentWidget(QLabel(f" v{VERSION} "))
 
     def connect_signals_slots(self):
-        self.pb_convert_tabs_to_spaces.clicked.connect(self.convert_tabs_to_spaces)
-        self.pb_number_ids.clicked.connect(self.number_ids)
-        self.pb_number_lines.clicked.connect(self.number_lines)
         self.pb_open_file.clicked.connect(self.open_file)
+        self.tb_reload_file.clicked.connect(self.load_file)
+        self.pb_number_lines.clicked.connect(self.number_lines)
+        self.pb_number_ids.clicked.connect(self.number_ids)
+        self.pb_convert_tabs_to_spaces.clicked.connect(self.convert_tabs_to_spaces)
         self.pb_remove_trailing_whitespace.clicked.connect(
             self.remove_trailing_whitespace
         )
-        self.pb_save_file_as.clicked.connect(self.save_file_as)
         self.pb_save_file.clicked.connect(self.save_file)
-        self.tb_reload_file.clicked.connect(self.load_file)
+        self.pb_save_file_as.clicked.connect(self.save_file_as)
 
         self.pb_open_folder.clicked.connect(self.open_folder)
         self.tb_reload_folder.clicked.connect(self.load_folder)
