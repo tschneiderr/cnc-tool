@@ -32,7 +32,7 @@
             <property name="font">
              <font>
               <family>Cascadia Mono Light</family>
-              <pointsize>12</pointsize>
+              <pointsize>10</pointsize>
              </font>
             </property>
             <property name="lineWrapMode">
@@ -135,7 +135,7 @@
             <property name="font">
              <font>
               <family>Cascadia Mono Light</family>
-              <pointsize>11</pointsize>
+              <pointsize>10</pointsize>
              </font>
             </property>
             <property name="readOnly">
@@ -357,9 +357,6 @@
        </layout>
       </widget>
       <widget class="QWidget" name="tab_folder_mode">
-       <property name="enabled">
-        <bool>false</bool>
-       </property>
        <attribute name="title">
         <string>Folder Mode</string>
        </attribute>
@@ -399,7 +396,7 @@
             <property name="font">
              <font>
               <family>Cascadia Mono Light</family>
-              <pointsize>11</pointsize>
+              <pointsize>10</pointsize>
              </font>
             </property>
             <property name="readOnly">
@@ -415,7 +412,7 @@
             <property name="font">
              <font>
               <family>Cascadia Mono Light</family>
-              <pointsize>18</pointsize>
+              <pointsize>10</pointsize>
              </font>
             </property>
             <property name="lineWrapMode">
@@ -428,7 +425,7 @@
              <double>40.000000000000000</double>
             </property>
             <property name="placeholderText">
-             <string>Coming Soon!</string>
+             <string>Folder Preview</string>
             </property>
            </widget>
           </item>
