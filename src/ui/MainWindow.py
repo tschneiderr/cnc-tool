@@ -38,56 +38,74 @@ class Ui_MainWindow(object):
         self.verticalLayout_2.setObjectName(u"verticalLayout_2")
         self.gridLayout = QGridLayout()
         self.gridLayout.setObjectName(u"gridLayout")
-        self.pb_save_file_as = QPushButton(self.tab_file_mode)
-        self.pb_save_file_as.setObjectName(u"pb_save_file_as")
-        font = QFont()
-        font.setBold(True)
-        self.pb_save_file_as.setFont(font)
-
-        self.gridLayout.addWidget(self.pb_save_file_as, 5, 1, 1, 2)
-
-        self.vs_functions_2 = QSpacerItem(0, 0, QSizePolicy.Minimum, QSizePolicy.Expanding)
-
-        self.gridLayout.addItem(self.vs_functions_2, 6, 1, 1, 2)
-
-        self.pb_save_file = QPushButton(self.tab_file_mode)
-        self.pb_save_file.setObjectName(u"pb_save_file")
-        self.pb_save_file.setFont(font)
-
-        self.gridLayout.addWidget(self.pb_save_file, 4, 1, 1, 2)
-
         self.pte_file_preview = QPlainTextEdit(self.tab_file_mode)
         self.pte_file_preview.setObjectName(u"pte_file_preview")
-        font1 = QFont()
-        font1.setFamilies([u"Cascadia Mono Light"])
-        font1.setPointSize(12)
-        self.pte_file_preview.setFont(font1)
+        font = QFont()
+        font.setFamilies([u"Cascadia Mono Light"])
+        font.setPointSize(12)
+        self.pte_file_preview.setFont(font)
         self.pte_file_preview.setLineWrapMode(QPlainTextEdit.NoWrap)
         self.pte_file_preview.setTabStopDistance(40.000000000000000)
 
-        self.gridLayout.addWidget(self.pte_file_preview, 1, 0, 6, 1)
+        self.gridLayout.addWidget(self.pte_file_preview, 1, 0, 7, 1)
+
+        self.pb_save_file = QPushButton(self.tab_file_mode)
+        self.pb_save_file.setObjectName(u"pb_save_file")
+        font1 = QFont()
+        font1.setBold(True)
+        self.pb_save_file.setFont(font1)
+
+        self.gridLayout.addWidget(self.pb_save_file, 5, 1, 1, 2)
+
+        self.vs_functions_1 = QSpacerItem(0, 10, QSizePolicy.Minimum, QSizePolicy.Fixed)
+
+        self.gridLayout.addItem(self.vs_functions_1, 4, 1, 1, 2)
+
+        self.tb_reload_file = QToolButton(self.tab_file_mode)
+        self.tb_reload_file.setObjectName(u"tb_reload_file")
+        font2 = QFont()
+        font2.setPointSize(10)
+        self.tb_reload_file.setFont(font2)
+
+        self.gridLayout.addWidget(self.tb_reload_file, 0, 1, 1, 1)
+
+        self.vs_functions_2 = QSpacerItem(0, 0, QSizePolicy.Minimum, QSizePolicy.Expanding)
+
+        self.gridLayout.addItem(self.vs_functions_2, 7, 1, 1, 2)
+
+        self.gb_options = QGroupBox(self.tab_file_mode)
+        self.gb_options.setObjectName(u"gb_options")
+        self.verticalLayout_4 = QVBoxLayout(self.gb_options)
+        self.verticalLayout_4.setObjectName(u"verticalLayout_4")
+        self.cb_ignore_comments = QCheckBox(self.gb_options)
+        self.cb_ignore_comments.setObjectName(u"cb_ignore_comments")
+
+        self.verticalLayout_4.addWidget(self.cb_ignore_comments)
+
+
+        self.gridLayout.addWidget(self.gb_options, 2, 1, 1, 2)
+
+        self.pb_open_file = QPushButton(self.tab_file_mode)
+        self.pb_open_file.setObjectName(u"pb_open_file")
+        self.pb_open_file.setFont(font1)
+
+        self.gridLayout.addWidget(self.pb_open_file, 0, 2, 1, 1)
 
         self.le_file_path = QLineEdit(self.tab_file_mode)
         self.le_file_path.setObjectName(u"le_file_path")
-        font2 = QFont()
-        font2.setFamilies([u"Cascadia Mono Light"])
-        font2.setPointSize(11)
-        self.le_file_path.setFont(font2)
+        font3 = QFont()
+        font3.setFamilies([u"Cascadia Mono Light"])
+        font3.setPointSize(11)
+        self.le_file_path.setFont(font3)
         self.le_file_path.setReadOnly(True)
 
         self.gridLayout.addWidget(self.le_file_path, 0, 0, 1, 1)
 
-        self.tb_reload_file = QToolButton(self.tab_file_mode)
-        self.tb_reload_file.setObjectName(u"tb_reload_file")
-        font3 = QFont()
-        font3.setPointSize(10)
-        self.tb_reload_file.setFont(font3)
+        self.pb_save_file_as = QPushButton(self.tab_file_mode)
+        self.pb_save_file_as.setObjectName(u"pb_save_file_as")
+        self.pb_save_file_as.setFont(font1)
 
-        self.gridLayout.addWidget(self.tb_reload_file, 0, 1, 1, 1)
-
-        self.vs_functions_1 = QSpacerItem(0, 10, QSizePolicy.Minimum, QSizePolicy.Fixed)
-
-        self.gridLayout.addItem(self.vs_functions_1, 3, 1, 1, 2)
+        self.gridLayout.addWidget(self.pb_save_file_as, 6, 1, 1, 2)
 
         self.gb_functions = QGroupBox(self.tab_file_mode)
         self.gb_functions.setObjectName(u"gb_functions")
@@ -210,25 +228,7 @@ class Ui_MainWindow(object):
         self.gridLayout_2.addWidget(self.ln_functions_3, 14, 0, 1, 2)
 
 
-        self.gridLayout.addWidget(self.gb_functions, 1, 1, 1, 2)
-
-        self.pb_open_file = QPushButton(self.tab_file_mode)
-        self.pb_open_file.setObjectName(u"pb_open_file")
-        self.pb_open_file.setFont(font)
-
-        self.gridLayout.addWidget(self.pb_open_file, 0, 2, 1, 1)
-
-        self.gb_options = QGroupBox(self.tab_file_mode)
-        self.gb_options.setObjectName(u"gb_options")
-        self.verticalLayout_4 = QVBoxLayout(self.gb_options)
-        self.verticalLayout_4.setObjectName(u"verticalLayout_4")
-        self.cb_ignore_comments = QCheckBox(self.gb_options)
-        self.cb_ignore_comments.setObjectName(u"cb_ignore_comments")
-
-        self.verticalLayout_4.addWidget(self.cb_ignore_comments)
-
-
-        self.gridLayout.addWidget(self.gb_options, 2, 1, 1, 2)
+        self.gridLayout.addWidget(self.gb_functions, 3, 1, 1, 2)
 
 
         self.verticalLayout_2.addLayout(self.gridLayout)
@@ -241,6 +241,23 @@ class Ui_MainWindow(object):
         self.verticalLayout_3.setObjectName(u"verticalLayout_3")
         self.gridLayout_3 = QGridLayout()
         self.gridLayout_3.setObjectName(u"gridLayout_3")
+        self.verticalSpacer = QSpacerItem(0, 0, QSizePolicy.Minimum, QSizePolicy.Expanding)
+
+        self.gridLayout_3.addItem(self.verticalSpacer, 4, 1, 1, 2)
+
+        self.tb_reload_folder = QToolButton(self.tab_folder_mode)
+        self.tb_reload_folder.setObjectName(u"tb_reload_folder")
+        self.tb_reload_folder.setFont(font2)
+
+        self.gridLayout_3.addWidget(self.tb_reload_folder, 0, 1, 1, 1)
+
+        self.le_folder_path = QLineEdit(self.tab_folder_mode)
+        self.le_folder_path.setObjectName(u"le_folder_path")
+        self.le_folder_path.setFont(font3)
+        self.le_folder_path.setReadOnly(True)
+
+        self.gridLayout_3.addWidget(self.le_folder_path, 0, 0, 1, 1)
+
         self.pte_folder_preview = QPlainTextEdit(self.tab_folder_mode)
         self.pte_folder_preview.setObjectName(u"pte_folder_preview")
         font4 = QFont()
@@ -251,14 +268,25 @@ class Ui_MainWindow(object):
         self.pte_folder_preview.setReadOnly(True)
         self.pte_folder_preview.setTabStopDistance(40.000000000000000)
 
-        self.gridLayout_3.addWidget(self.pte_folder_preview, 1, 0, 3, 1)
+        self.gridLayout_3.addWidget(self.pte_folder_preview, 1, 0, 4, 1)
 
-        self.le_folder_path = QLineEdit(self.tab_folder_mode)
-        self.le_folder_path.setObjectName(u"le_folder_path")
-        self.le_folder_path.setFont(font2)
-        self.le_folder_path.setReadOnly(True)
+        self.gb_options_2 = QGroupBox(self.tab_folder_mode)
+        self.gb_options_2.setObjectName(u"gb_options_2")
+        self.verticalLayout_5 = QVBoxLayout(self.gb_options_2)
+        self.verticalLayout_5.setObjectName(u"verticalLayout_5")
+        self.cb_ignore_comments_2 = QCheckBox(self.gb_options_2)
+        self.cb_ignore_comments_2.setObjectName(u"cb_ignore_comments_2")
 
-        self.gridLayout_3.addWidget(self.le_folder_path, 0, 0, 1, 1)
+        self.verticalLayout_5.addWidget(self.cb_ignore_comments_2)
+
+
+        self.gridLayout_3.addWidget(self.gb_options_2, 2, 1, 1, 2)
+
+        self.pb_open_folder = QPushButton(self.tab_folder_mode)
+        self.pb_open_folder.setObjectName(u"pb_open_folder")
+        self.pb_open_folder.setFont(font1)
+
+        self.gridLayout_3.addWidget(self.pb_open_folder, 0, 2, 1, 1)
 
         self.gb_functions_2 = QGroupBox(self.tab_folder_mode)
         self.gb_functions_2.setObjectName(u"gb_functions_2")
@@ -378,35 +406,7 @@ class Ui_MainWindow(object):
         self.gridLayout_4.addWidget(self.ln_functions_6, 14, 0, 1, 2)
 
 
-        self.gridLayout_3.addWidget(self.gb_functions_2, 1, 1, 1, 2)
-
-        self.verticalSpacer = QSpacerItem(0, 0, QSizePolicy.Minimum, QSizePolicy.Expanding)
-
-        self.gridLayout_3.addItem(self.verticalSpacer, 3, 1, 1, 2)
-
-        self.tb_reload_folder = QToolButton(self.tab_folder_mode)
-        self.tb_reload_folder.setObjectName(u"tb_reload_folder")
-        self.tb_reload_folder.setFont(font3)
-
-        self.gridLayout_3.addWidget(self.tb_reload_folder, 0, 1, 1, 1)
-
-        self.pb_open_folder = QPushButton(self.tab_folder_mode)
-        self.pb_open_folder.setObjectName(u"pb_open_folder")
-        self.pb_open_folder.setFont(font)
-
-        self.gridLayout_3.addWidget(self.pb_open_folder, 0, 2, 1, 1)
-
-        self.gb_options_2 = QGroupBox(self.tab_folder_mode)
-        self.gb_options_2.setObjectName(u"gb_options_2")
-        self.verticalLayout_5 = QVBoxLayout(self.gb_options_2)
-        self.verticalLayout_5.setObjectName(u"verticalLayout_5")
-        self.cb_ignore_comments_2 = QCheckBox(self.gb_options_2)
-        self.cb_ignore_comments_2.setObjectName(u"cb_ignore_comments_2")
-
-        self.verticalLayout_5.addWidget(self.cb_ignore_comments_2)
-
-
-        self.gridLayout_3.addWidget(self.gb_options_2, 2, 1, 1, 2)
+        self.gridLayout_3.addWidget(self.gb_functions_2, 3, 1, 1, 2)
 
 
         self.verticalLayout_3.addLayout(self.gridLayout_3)
@@ -434,14 +434,17 @@ class Ui_MainWindow(object):
 
     def retranslateUi(self, MainWindow):
         MainWindow.setWindowTitle(QCoreApplication.translate("MainWindow", u"CNC Tool", None))
-        self.pb_save_file_as.setText(QCoreApplication.translate("MainWindow", u"Save File As", None))
-        self.pb_save_file.setText(QCoreApplication.translate("MainWindow", u"Save File", None))
         self.pte_file_preview.setPlaceholderText(QCoreApplication.translate("MainWindow", u"File Preview / Manual Input", None))
-        self.le_file_path.setPlaceholderText(QCoreApplication.translate("MainWindow", u"File Path", None))
+        self.pb_save_file.setText(QCoreApplication.translate("MainWindow", u"Save File", None))
 #if QT_CONFIG(tooltip)
         self.tb_reload_file.setToolTip(QCoreApplication.translate("MainWindow", u"Reload File", None))
 #endif // QT_CONFIG(tooltip)
         self.tb_reload_file.setText(QCoreApplication.translate("MainWindow", u"\u2b6e", None))
+        self.gb_options.setTitle(QCoreApplication.translate("MainWindow", u"Options", None))
+        self.cb_ignore_comments.setText(QCoreApplication.translate("MainWindow", u"Ignore Comments", None))
+        self.pb_open_file.setText(QCoreApplication.translate("MainWindow", u"Open File", None))
+        self.le_file_path.setPlaceholderText(QCoreApplication.translate("MainWindow", u"File Path", None))
+        self.pb_save_file_as.setText(QCoreApplication.translate("MainWindow", u"Save File As", None))
         self.gb_functions.setTitle(QCoreApplication.translate("MainWindow", u"Functions", None))
         self.sb_number_lines_start.setPrefix(QCoreApplication.translate("MainWindow", u"N", None))
         self.lb_number_ids_step.setText(QCoreApplication.translate("MainWindow", u"Step:", None))
@@ -454,12 +457,16 @@ class Ui_MainWindow(object):
         self.lb_tab_width.setText(QCoreApplication.translate("MainWindow", u"Tab Width", None))
         self.pb_number_lines.setText(QCoreApplication.translate("MainWindow", u"Number Lines", None))
         self.pb_remove_trailing_whitespace.setText(QCoreApplication.translate("MainWindow", u"Remove Trailing Whitespace", None))
-        self.pb_open_file.setText(QCoreApplication.translate("MainWindow", u"Open File", None))
-        self.gb_options.setTitle(QCoreApplication.translate("MainWindow", u"Options", None))
-        self.cb_ignore_comments.setText(QCoreApplication.translate("MainWindow", u"Ignore Comments", None))
         self.tabWidget.setTabText(self.tabWidget.indexOf(self.tab_file_mode), QCoreApplication.translate("MainWindow", u"File Mode", None))
-        self.pte_folder_preview.setPlaceholderText(QCoreApplication.translate("MainWindow", u"Coming Soon!", None))
+#if QT_CONFIG(tooltip)
+        self.tb_reload_folder.setToolTip(QCoreApplication.translate("MainWindow", u"Reload Folder", None))
+#endif // QT_CONFIG(tooltip)
+        self.tb_reload_folder.setText(QCoreApplication.translate("MainWindow", u"\u2b6e", None))
         self.le_folder_path.setPlaceholderText(QCoreApplication.translate("MainWindow", u"Folder Path", None))
+        self.pte_folder_preview.setPlaceholderText(QCoreApplication.translate("MainWindow", u"Coming Soon!", None))
+        self.gb_options_2.setTitle(QCoreApplication.translate("MainWindow", u"Options", None))
+        self.cb_ignore_comments_2.setText(QCoreApplication.translate("MainWindow", u"Ignore Comments", None))
+        self.pb_open_folder.setText(QCoreApplication.translate("MainWindow", u"Open Folder", None))
         self.gb_functions_2.setTitle(QCoreApplication.translate("MainWindow", u"Functions", None))
         self.sb_number_lines_start_2.setPrefix(QCoreApplication.translate("MainWindow", u"N", None))
         self.lb_number_ids_step_2.setText(QCoreApplication.translate("MainWindow", u"Step:", None))
@@ -472,13 +479,6 @@ class Ui_MainWindow(object):
         self.lb_tab_width_2.setText(QCoreApplication.translate("MainWindow", u"Tab Width", None))
         self.pb_number_lines_2.setText(QCoreApplication.translate("MainWindow", u"Number Lines", None))
         self.pb_remove_trailing_whitespace_2.setText(QCoreApplication.translate("MainWindow", u"Remove Trailing Whitespace", None))
-#if QT_CONFIG(tooltip)
-        self.tb_reload_folder.setToolTip(QCoreApplication.translate("MainWindow", u"Reload Folder", None))
-#endif // QT_CONFIG(tooltip)
-        self.tb_reload_folder.setText(QCoreApplication.translate("MainWindow", u"\u2b6e", None))
-        self.pb_open_folder.setText(QCoreApplication.translate("MainWindow", u"Open Folder", None))
-        self.gb_options_2.setTitle(QCoreApplication.translate("MainWindow", u"Options", None))
-        self.cb_ignore_comments_2.setText(QCoreApplication.translate("MainWindow", u"Ignore Comments", None))
         self.tabWidget.setTabText(self.tabWidget.indexOf(self.tab_folder_mode), QCoreApplication.translate("MainWindow", u"Folder Mode", None))
     # retranslateUi
 
