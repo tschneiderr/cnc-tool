@@ -46,6 +46,8 @@ class MainWindow(QMainWindow, Ui_MainWindow):
 
         self.pb_open_folder.clicked.connect(self.open_folder)
         self.tb_reload_folder.clicked.connect(self.load_folder)
+        self.pb_number_lines_2.clicked.connect(self.number_lines_folder)
+        self.pb_number_ids_2.clicked.connect(self.number_ids_folder)
 
     def open_folder(self):
         opened_folder_path = QFileDialog.getExistingDirectory(self)
@@ -67,6 +69,32 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         self.pte_folder_preview.clear()
         for file in self.folder_contents:
             self.pte_folder_preview.appendPlainText(file.name)
+
+    def number_lines_folder(self):
+        for file in self.folder_contents:
+            current_text = file.read_text("utf-8")
+            start_number = self.sb_number_lines_start_2.value()
+            step = self.sb_number_lines_step_2.value()
+            if self.cb_ignore_comments_2.isChecked():
+                new_text = file_functions.number_lines_wo_comment(
+                    current_text, start_number, step, ";"
+                )
+            else:
+                new_text = file_functions.number_lines(current_text, start_number, step)
+            file.write_text(new_text, "utf-8")
+
+    def number_ids_folder(self):
+        for file in self.folder_contents:
+            current_text = file.read_text("utf-8")
+            start_number = self.sb_number_ids_start_2.value()
+            step = self.sb_number_ids_step_2.value()
+            if self.cb_ignore_comments_2.isChecked():
+                new_text = file_functions.number_ids_wo_comment(
+                    current_text, start_number, step, ";"
+                )
+            else:
+                new_text = file_functions.number_ids(current_text, start_number, step)
+            file.write_text(new_text, "utf-8")
 
     def open_file(self):
         opened_file_path, _ = QFileDialog.getOpenFileName(self)
