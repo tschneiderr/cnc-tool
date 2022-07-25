@@ -1,5 +1,6 @@
 import os
 import sys
+from pathlib import Path
 
 from PySide6.QtCore import Qt
 from PySide6.QtGui import QFontDatabase, QGuiApplication
@@ -55,7 +56,17 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         self.load_folder()
 
     def load_folder(self):
-        pass
+        if not self.folder_path:
+            return
+        self.folder_contents = find_files_in_folder(
+            self.folder_path, [".def", ".mpf", ".spf", ".tea"]
+        )
+        if not self.folder_contents:
+            self.pte_folder_preview.setPlainText("No Files Found!")
+            return
+        self.pte_folder_preview.clear()
+        for file in self.folder_contents:
+            self.pte_folder_preview.appendPlainText(file.name)
 
     def open_file(self):
         opened_file_path, _ = QFileDialog.getOpenFileName(self)
@@ -126,6 +137,15 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         with open(self.file_path, "w", encoding="utf-8") as file:
             file.write(current_text)
         self.statusbar.showMessage("File Saved!", 2000)
+
+
+def find_files_in_folder(folder_path: str, file_extensions: list[str]) -> list[Path]:
+    file_extensions = [ext.lower() for ext in file_extensions]
+    files = []
+    for item in Path(folder_path).iterdir():
+        if item.is_file() and item.suffix.lower() in file_extensions:
+            files.append(item)
+    return files
 
 
 def main():
