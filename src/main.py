@@ -10,6 +10,7 @@ import file_functions
 from ui.MainWindow import Ui_MainWindow
 
 VERSION = "0.3.0"
+MSG_TIMEOUT = 5000
 
 
 class MainWindow(QMainWindow, Ui_MainWindow):
@@ -71,10 +72,12 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         )
         if not self.folder_contents:
             self.pte_folder_preview.setPlainText("No Files Found!")
+            self.statusbar.showMessage("Loaded Folder!", MSG_TIMEOUT)
             return
         self.pte_folder_preview.clear()
         for file in self.folder_contents:
             self.pte_folder_preview.appendPlainText(file.name)
+        self.statusbar.showMessage("Loaded Folder!", MSG_TIMEOUT)
 
     def number_lines_folder(self):
         for file in self.folder_contents:
@@ -88,6 +91,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
             else:
                 new_text = file_functions.number_lines(current_text, start_number, step)
             file.write_text(new_text, "utf-8")
+        self.statusbar.showMessage("Numbered Lines!", MSG_TIMEOUT)
 
     def number_ids_folder(self):
         for file in self.folder_contents:
@@ -101,6 +105,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
             else:
                 new_text = file_functions.number_ids(current_text, start_number, step)
             file.write_text(new_text, "utf-8")
+        self.statusbar.showMessage("Numbered IDS!", MSG_TIMEOUT)
 
     def convert_tabs_to_spaces_folder(self):
         for file in self.folder_contents:
@@ -108,12 +113,14 @@ class MainWindow(QMainWindow, Ui_MainWindow):
             tab_width = self.sb_tab_width_2.value()
             new_text = file_functions.convert_tabs_to_spaces(current_text, tab_width)
             file.write_text(new_text, "utf-8")
+        self.statusbar.showMessage("Converted Tabs To Spaces!", MSG_TIMEOUT)
 
     def remove_trailing_whitespace_folder(self):
         for file in self.folder_contents:
             current_text = file.read_text("utf-8")
             new_text = file_functions.remove_trailing_whitespace(current_text)
             file.write_text(new_text, "utf-8")
+        self.statusbar.showMessage("Removed Trailing Whitespace!", MSG_TIMEOUT)
 
     def open_file(self):
         opened_file_path, _ = QFileDialog.getOpenFileName(self)
@@ -128,6 +135,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
             return
         with open(self.file_path, encoding="utf-8") as file:
             self.pte_file_preview.setPlainText(file.read())
+        self.statusbar.showMessage("Loaded File!", MSG_TIMEOUT)
 
     def number_lines(self):
         current_text = self.pte_file_preview.toPlainText()
@@ -140,6 +148,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         else:
             new_text = file_functions.number_lines(current_text, start_number, step)
         self.pte_file_preview.setPlainText(new_text)
+        self.statusbar.showMessage("Numbered Lines!", MSG_TIMEOUT)
 
     def number_ids(self):
         current_text = self.pte_file_preview.toPlainText()
@@ -152,17 +161,20 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         else:
             new_text = file_functions.number_ids(current_text, start_number, step)
         self.pte_file_preview.setPlainText(new_text)
+        self.statusbar.showMessage("Numbered IDS!", MSG_TIMEOUT)
 
     def convert_tabs_to_spaces(self):
         current_text = self.pte_file_preview.toPlainText()
         tab_width = self.sb_tab_width.value()
         new_text = file_functions.convert_tabs_to_spaces(current_text, tab_width)
         self.pte_file_preview.setPlainText(new_text)
+        self.statusbar.showMessage("Converted Tabs To Spaces!", MSG_TIMEOUT)
 
     def remove_trailing_whitespace(self):
         current_text = self.pte_file_preview.toPlainText()
         new_text = file_functions.remove_trailing_whitespace(current_text)
         self.pte_file_preview.setPlainText(new_text)
+        self.statusbar.showMessage("Removed Trailing Whitespace!", MSG_TIMEOUT)
 
     def save_file(self):
         save_file_path = self.file_path
@@ -172,7 +184,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         current_text = self.pte_file_preview.toPlainText()
         with open(save_file_path, "w", encoding="utf-8") as file:
             file.write(current_text)
-        self.statusbar.showMessage("File Saved!", 2000)
+        self.statusbar.showMessage("Saved File!", MSG_TIMEOUT)
 
     def save_file_as(self):
         save_file_path, _ = QFileDialog.getSaveFileName(self)
@@ -183,7 +195,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         current_text = self.pte_file_preview.toPlainText()
         with open(self.file_path, "w", encoding="utf-8") as file:
             file.write(current_text)
-        self.statusbar.showMessage("File Saved!", 2000)
+        self.statusbar.showMessage("Saved File!", MSG_TIMEOUT)
 
 
 def find_files_in_folder(folder_path: str, file_extensions: list[str]) -> list[Path]:
