@@ -48,6 +48,12 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         self.tb_reload_folder.clicked.connect(self.load_folder)
         self.pb_number_lines_2.clicked.connect(self.number_lines_folder)
         self.pb_number_ids_2.clicked.connect(self.number_ids_folder)
+        self.pb_convert_tabs_to_spaces_2.clicked.connect(
+            self.convert_tabs_to_spaces_folder
+        )
+        self.pb_remove_trailing_whitespace_2.clicked.connect(
+            self.remove_trailing_whitespace_folder
+        )
 
     def open_folder(self):
         opened_folder_path = QFileDialog.getExistingDirectory(self)
@@ -94,6 +100,19 @@ class MainWindow(QMainWindow, Ui_MainWindow):
                 )
             else:
                 new_text = file_functions.number_ids(current_text, start_number, step)
+            file.write_text(new_text, "utf-8")
+
+    def convert_tabs_to_spaces_folder(self):
+        for file in self.folder_contents:
+            current_text = file.read_text("utf-8")
+            tab_width = self.sb_tab_width_2.value()
+            new_text = file_functions.convert_tabs_to_spaces(current_text, tab_width)
+            file.write_text(new_text, "utf-8")
+
+    def remove_trailing_whitespace_folder(self):
+        for file in self.folder_contents:
+            current_text = file.read_text("utf-8")
+            new_text = file_functions.remove_trailing_whitespace(current_text)
             file.write_text(new_text, "utf-8")
 
     def open_file(self):
