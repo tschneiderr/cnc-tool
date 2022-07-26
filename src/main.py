@@ -57,7 +57,9 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         )
 
     def open_folder(self):
-        opened_folder_path = QFileDialog.getExistingDirectory(self)
+        opened_folder_path = QFileDialog.getExistingDirectory(
+            self, dir=os.fspath(Path.home().joinpath("Desktop"))
+        )
         if not opened_folder_path:
             return
         self.folder_path = os.path.normpath(opened_folder_path)
@@ -123,7 +125,9 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         self.statusbar.showMessage("Removed Trailing Whitespace!", MSG_TIMEOUT)
 
     def open_file(self):
-        opened_file_path, _ = QFileDialog.getOpenFileName(self)
+        opened_file_path, _ = QFileDialog.getOpenFileName(
+            self, dir=os.fspath(Path.home().joinpath("Desktop"))
+        )
         if not opened_file_path:
             return
         self.file_path = os.path.normpath(opened_file_path)
