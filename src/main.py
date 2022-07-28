@@ -10,7 +10,7 @@ import file_functions
 from ui.MainWindow import Ui_MainWindow
 
 VERSION = "0.3.0"
-MSG_TIMEOUT = 5000
+MSG_TIMEOUT = 3000
 
 
 class MainWindow(QMainWindow, Ui_MainWindow):
