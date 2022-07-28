@@ -82,10 +82,12 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         self.statusbar.showMessage("Loaded Folder!", MSG_TIMEOUT)
 
     def number_lines_folder(self):
+        if not self.folder_contents:
+            return
+        start_number = self.sb_number_lines_start_2.value()
+        step = self.sb_number_lines_step_2.value()
         for file in self.folder_contents:
             current_text = file.read_text("utf-8")
-            start_number = self.sb_number_lines_start_2.value()
-            step = self.sb_number_lines_step_2.value()
             if self.cb_ignore_comments_2.isChecked():
                 new_text = file_functions.number_lines_wo_comment(
                     current_text, start_number, step, ";"
@@ -96,10 +98,12 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         self.statusbar.showMessage("Numbered Lines!", MSG_TIMEOUT)
 
     def number_ids_folder(self):
+        if not self.folder_contents:
+            return
+        start_number = self.sb_number_ids_start_2.value()
+        step = self.sb_number_ids_step_2.value()
         for file in self.folder_contents:
             current_text = file.read_text("utf-8")
-            start_number = self.sb_number_ids_start_2.value()
-            step = self.sb_number_ids_step_2.value()
             if self.cb_ignore_comments_2.isChecked():
                 new_text = file_functions.number_ids_wo_comment(
                     current_text, start_number, step, ";"
@@ -110,14 +114,18 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         self.statusbar.showMessage("Numbered IDS!", MSG_TIMEOUT)
 
     def convert_tabs_to_spaces_folder(self):
+        if not self.folder_contents:
+            return
+        tab_width = self.sb_tab_width_2.value()
         for file in self.folder_contents:
             current_text = file.read_text("utf-8")
-            tab_width = self.sb_tab_width_2.value()
             new_text = file_functions.convert_tabs_to_spaces(current_text, tab_width)
             file.write_text(new_text, "utf-8")
         self.statusbar.showMessage("Converted Tabs To Spaces!", MSG_TIMEOUT)
 
     def remove_trailing_whitespace_folder(self):
+        if not self.folder_contents:
+            return
         for file in self.folder_contents:
             current_text = file.read_text("utf-8")
             new_text = file_functions.remove_trailing_whitespace(current_text)
@@ -143,6 +151,8 @@ class MainWindow(QMainWindow, Ui_MainWindow):
 
     def number_lines(self):
         current_text = self.pte_file_preview.toPlainText()
+        if not current_text:
+            return
         start_number = self.sb_number_lines_start.value()
         step = self.sb_number_lines_step.value()
         if self.cb_ignore_comments.isChecked():
@@ -156,6 +166,8 @@ class MainWindow(QMainWindow, Ui_MainWindow):
 
     def number_ids(self):
         current_text = self.pte_file_preview.toPlainText()
+        if not current_text:
+            return
         start_number = self.sb_number_ids_start.value()
         step = self.sb_number_ids_step.value()
         if self.cb_ignore_comments.isChecked():
@@ -169,6 +181,8 @@ class MainWindow(QMainWindow, Ui_MainWindow):
 
     def convert_tabs_to_spaces(self):
         current_text = self.pte_file_preview.toPlainText()
+        if not current_text:
+            return
         tab_width = self.sb_tab_width.value()
         new_text = file_functions.convert_tabs_to_spaces(current_text, tab_width)
         self.pte_file_preview.setPlainText(new_text)
@@ -176,6 +190,8 @@ class MainWindow(QMainWindow, Ui_MainWindow):
 
     def remove_trailing_whitespace(self):
         current_text = self.pte_file_preview.toPlainText()
+        if not current_text:
+            return
         new_text = file_functions.remove_trailing_whitespace(current_text)
         self.pte_file_preview.setPlainText(new_text)
         self.statusbar.showMessage("Removed Trailing Whitespace!", MSG_TIMEOUT)
