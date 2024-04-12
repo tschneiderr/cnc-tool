@@ -1,4 +1,1 @@
-black
-flake8
 pyinstaller
-pylint
