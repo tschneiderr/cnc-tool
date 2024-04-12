@@ -2,11 +2,10 @@ import os
 import sys
 from pathlib import Path
 
+import file_functions
 from PySide6.QtCore import Qt
 from PySide6.QtGui import QFontDatabase, QGuiApplication
 from PySide6.QtWidgets import QApplication, QFileDialog, QLabel, QMainWindow
-
-import file_functions
 from ui.MainWindow import Ui_MainWindow
 
 VERSION = "0.3.0"
