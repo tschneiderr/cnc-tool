@@ -3,7 +3,7 @@
 ################################################################################
 ## Form generated from reading UI file 'MainWindow.ui'
 ##
-## Created by: Qt User Interface Compiler version 6.3.2
+## Created by: Qt User Interface Compiler version 6.7.0
 ##
 ## WARNING! All changes made in this file will be lost when recompiling UI file!
 ################################################################################
@@ -44,7 +44,7 @@ class Ui_MainWindow(object):
         font.setFamilies([u"Cascadia Mono Light"])
         font.setPointSize(10)
         self.pte_file_preview.setFont(font)
-        self.pte_file_preview.setLineWrapMode(QPlainTextEdit.NoWrap)
+        self.pte_file_preview.setLineWrapMode(QPlainTextEdit.LineWrapMode.NoWrap)
         self.pte_file_preview.setTabStopDistance(40.000000000000000)
 
         self.gridLayout.addWidget(self.pte_file_preview, 1, 0, 7, 1)
@@ -57,7 +57,7 @@ class Ui_MainWindow(object):
 
         self.gridLayout.addWidget(self.pb_save_file, 5, 1, 1, 2)
 
-        self.vs_functions_1 = QSpacerItem(0, 10, QSizePolicy.Minimum, QSizePolicy.Fixed)
+        self.vs_functions_1 = QSpacerItem(0, 10, QSizePolicy.Policy.Minimum, QSizePolicy.Policy.Fixed)
 
         self.gridLayout.addItem(self.vs_functions_1, 4, 1, 1, 2)
 
@@ -69,7 +69,7 @@ class Ui_MainWindow(object):
 
         self.gridLayout.addWidget(self.tb_reload_file, 0, 1, 1, 1)
 
-        self.vs_functions_2 = QSpacerItem(0, 0, QSizePolicy.Minimum, QSizePolicy.Expanding)
+        self.vs_functions_2 = QSpacerItem(0, 0, QSizePolicy.Policy.Minimum, QSizePolicy.Policy.Expanding)
 
         self.gridLayout.addItem(self.vs_functions_2, 7, 1, 1, 2)
 
@@ -106,7 +106,7 @@ class Ui_MainWindow(object):
 
         self.gb_functions = QGroupBox(self.tab_file_mode)
         self.gb_functions.setObjectName(u"gb_functions")
-        sizePolicy = QSizePolicy(QSizePolicy.Preferred, QSizePolicy.Maximum)
+        sizePolicy = QSizePolicy(QSizePolicy.Policy.Preferred, QSizePolicy.Policy.Maximum)
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
         sizePolicy.setHeightForWidth(self.gb_functions.sizePolicy().hasHeightForWidth())
@@ -115,14 +115,14 @@ class Ui_MainWindow(object):
         self.gridLayout_2.setObjectName(u"gridLayout_2")
         self.ln_functions_2 = QFrame(self.gb_functions)
         self.ln_functions_2.setObjectName(u"ln_functions_2")
-        self.ln_functions_2.setFrameShadow(QFrame.Plain)
-        self.ln_functions_2.setFrameShape(QFrame.HLine)
+        self.ln_functions_2.setFrameShadow(QFrame.Shadow.Plain)
+        self.ln_functions_2.setFrameShape(QFrame.Shape.HLine)
 
         self.gridLayout_2.addWidget(self.ln_functions_2, 9, 0, 1, 2)
 
         self.sb_number_lines_start = QSpinBox(self.gb_functions)
         self.sb_number_lines_start.setObjectName(u"sb_number_lines_start")
-        self.sb_number_lines_start.setAlignment(Qt.AlignRight|Qt.AlignTrailing|Qt.AlignVCenter)
+        self.sb_number_lines_start.setAlignment(Qt.AlignmentFlag.AlignRight|Qt.AlignmentFlag.AlignTrailing|Qt.AlignmentFlag.AlignVCenter)
         self.sb_number_lines_start.setMaximum(100000)
         self.sb_number_lines_start.setSingleStep(100)
         self.sb_number_lines_start.setValue(1000)
@@ -141,8 +141,8 @@ class Ui_MainWindow(object):
 
         self.ln_functions_1 = QFrame(self.gb_functions)
         self.ln_functions_1.setObjectName(u"ln_functions_1")
-        self.ln_functions_1.setFrameShadow(QFrame.Plain)
-        self.ln_functions_1.setFrameShape(QFrame.HLine)
+        self.ln_functions_1.setFrameShadow(QFrame.Shadow.Plain)
+        self.ln_functions_1.setFrameShape(QFrame.Shape.HLine)
 
         self.gridLayout_2.addWidget(self.ln_functions_1, 4, 0, 1, 2)
 
@@ -163,7 +163,7 @@ class Ui_MainWindow(object):
 
         self.sb_number_ids_start = QSpinBox(self.gb_functions)
         self.sb_number_ids_start.setObjectName(u"sb_number_ids_start")
-        self.sb_number_ids_start.setAlignment(Qt.AlignRight|Qt.AlignTrailing|Qt.AlignVCenter)
+        self.sb_number_ids_start.setAlignment(Qt.AlignmentFlag.AlignRight|Qt.AlignmentFlag.AlignTrailing|Qt.AlignmentFlag.AlignVCenter)
         self.sb_number_ids_start.setMaximum(10000)
         self.sb_number_ids_start.setSingleStep(10)
         self.sb_number_ids_start.setValue(100)
@@ -182,7 +182,7 @@ class Ui_MainWindow(object):
 
         self.sb_tab_width = QSpinBox(self.gb_functions)
         self.sb_tab_width.setObjectName(u"sb_tab_width")
-        self.sb_tab_width.setAlignment(Qt.AlignRight|Qt.AlignTrailing|Qt.AlignVCenter)
+        self.sb_tab_width.setAlignment(Qt.AlignmentFlag.AlignRight|Qt.AlignmentFlag.AlignTrailing|Qt.AlignmentFlag.AlignVCenter)
         self.sb_tab_width.setMinimum(2)
         self.sb_tab_width.setMaximum(8)
         self.sb_tab_width.setSingleStep(2)
@@ -192,7 +192,7 @@ class Ui_MainWindow(object):
 
         self.sb_number_lines_step = QSpinBox(self.gb_functions)
         self.sb_number_lines_step.setObjectName(u"sb_number_lines_step")
-        self.sb_number_lines_step.setAlignment(Qt.AlignRight|Qt.AlignTrailing|Qt.AlignVCenter)
+        self.sb_number_lines_step.setAlignment(Qt.AlignmentFlag.AlignRight|Qt.AlignmentFlag.AlignTrailing|Qt.AlignmentFlag.AlignVCenter)
         self.sb_number_lines_step.setMaximum(10000)
         self.sb_number_lines_step.setSingleStep(10)
         self.sb_number_lines_step.setValue(10)
@@ -201,7 +201,7 @@ class Ui_MainWindow(object):
 
         self.sb_number_ids_step = QSpinBox(self.gb_functions)
         self.sb_number_ids_step.setObjectName(u"sb_number_ids_step")
-        self.sb_number_ids_step.setAlignment(Qt.AlignRight|Qt.AlignTrailing|Qt.AlignVCenter)
+        self.sb_number_ids_step.setAlignment(Qt.AlignmentFlag.AlignRight|Qt.AlignmentFlag.AlignTrailing|Qt.AlignmentFlag.AlignVCenter)
         self.sb_number_ids_step.setMaximum(100)
         self.sb_number_ids_step.setValue(1)
 
@@ -219,8 +219,8 @@ class Ui_MainWindow(object):
 
         self.ln_functions_3 = QFrame(self.gb_functions)
         self.ln_functions_3.setObjectName(u"ln_functions_3")
-        self.ln_functions_3.setFrameShadow(QFrame.Plain)
-        self.ln_functions_3.setFrameShape(QFrame.HLine)
+        self.ln_functions_3.setFrameShadow(QFrame.Shadow.Plain)
+        self.ln_functions_3.setFrameShape(QFrame.Shape.HLine)
 
         self.gridLayout_2.addWidget(self.ln_functions_3, 14, 0, 1, 2)
 
@@ -237,7 +237,7 @@ class Ui_MainWindow(object):
         self.verticalLayout_3.setObjectName(u"verticalLayout_3")
         self.gridLayout_3 = QGridLayout()
         self.gridLayout_3.setObjectName(u"gridLayout_3")
-        self.verticalSpacer = QSpacerItem(0, 0, QSizePolicy.Minimum, QSizePolicy.Expanding)
+        self.verticalSpacer = QSpacerItem(0, 0, QSizePolicy.Policy.Minimum, QSizePolicy.Policy.Expanding)
 
         self.gridLayout_3.addItem(self.verticalSpacer, 4, 1, 1, 2)
 
@@ -257,7 +257,7 @@ class Ui_MainWindow(object):
         self.pte_folder_preview = QPlainTextEdit(self.tab_folder_mode)
         self.pte_folder_preview.setObjectName(u"pte_folder_preview")
         self.pte_folder_preview.setFont(font)
-        self.pte_folder_preview.setLineWrapMode(QPlainTextEdit.NoWrap)
+        self.pte_folder_preview.setLineWrapMode(QPlainTextEdit.LineWrapMode.NoWrap)
         self.pte_folder_preview.setReadOnly(True)
         self.pte_folder_preview.setTabStopDistance(40.000000000000000)
 
@@ -289,14 +289,14 @@ class Ui_MainWindow(object):
         self.gridLayout_4.setObjectName(u"gridLayout_4")
         self.ln_functions_4 = QFrame(self.gb_functions_2)
         self.ln_functions_4.setObjectName(u"ln_functions_4")
-        self.ln_functions_4.setFrameShadow(QFrame.Plain)
-        self.ln_functions_4.setFrameShape(QFrame.HLine)
+        self.ln_functions_4.setFrameShadow(QFrame.Shadow.Plain)
+        self.ln_functions_4.setFrameShape(QFrame.Shape.HLine)
 
         self.gridLayout_4.addWidget(self.ln_functions_4, 9, 0, 1, 2)
 
         self.sb_number_lines_start_2 = QSpinBox(self.gb_functions_2)
         self.sb_number_lines_start_2.setObjectName(u"sb_number_lines_start_2")
-        self.sb_number_lines_start_2.setAlignment(Qt.AlignRight|Qt.AlignTrailing|Qt.AlignVCenter)
+        self.sb_number_lines_start_2.setAlignment(Qt.AlignmentFlag.AlignRight|Qt.AlignmentFlag.AlignTrailing|Qt.AlignmentFlag.AlignVCenter)
         self.sb_number_lines_start_2.setMaximum(100000)
         self.sb_number_lines_start_2.setSingleStep(100)
         self.sb_number_lines_start_2.setValue(1000)
@@ -315,8 +315,8 @@ class Ui_MainWindow(object):
 
         self.ln_functions_5 = QFrame(self.gb_functions_2)
         self.ln_functions_5.setObjectName(u"ln_functions_5")
-        self.ln_functions_5.setFrameShadow(QFrame.Plain)
-        self.ln_functions_5.setFrameShape(QFrame.HLine)
+        self.ln_functions_5.setFrameShadow(QFrame.Shadow.Plain)
+        self.ln_functions_5.setFrameShape(QFrame.Shape.HLine)
 
         self.gridLayout_4.addWidget(self.ln_functions_5, 4, 0, 1, 2)
 
@@ -337,7 +337,7 @@ class Ui_MainWindow(object):
 
         self.sb_number_ids_start_2 = QSpinBox(self.gb_functions_2)
         self.sb_number_ids_start_2.setObjectName(u"sb_number_ids_start_2")
-        self.sb_number_ids_start_2.setAlignment(Qt.AlignRight|Qt.AlignTrailing|Qt.AlignVCenter)
+        self.sb_number_ids_start_2.setAlignment(Qt.AlignmentFlag.AlignRight|Qt.AlignmentFlag.AlignTrailing|Qt.AlignmentFlag.AlignVCenter)
         self.sb_number_ids_start_2.setMaximum(10000)
         self.sb_number_ids_start_2.setSingleStep(10)
         self.sb_number_ids_start_2.setValue(100)
@@ -356,7 +356,7 @@ class Ui_MainWindow(object):
 
         self.sb_tab_width_2 = QSpinBox(self.gb_functions_2)
         self.sb_tab_width_2.setObjectName(u"sb_tab_width_2")
-        self.sb_tab_width_2.setAlignment(Qt.AlignRight|Qt.AlignTrailing|Qt.AlignVCenter)
+        self.sb_tab_width_2.setAlignment(Qt.AlignmentFlag.AlignRight|Qt.AlignmentFlag.AlignTrailing|Qt.AlignmentFlag.AlignVCenter)
         self.sb_tab_width_2.setMinimum(2)
         self.sb_tab_width_2.setMaximum(8)
         self.sb_tab_width_2.setSingleStep(2)
@@ -366,7 +366,7 @@ class Ui_MainWindow(object):
 
         self.sb_number_lines_step_2 = QSpinBox(self.gb_functions_2)
         self.sb_number_lines_step_2.setObjectName(u"sb_number_lines_step_2")
-        self.sb_number_lines_step_2.setAlignment(Qt.AlignRight|Qt.AlignTrailing|Qt.AlignVCenter)
+        self.sb_number_lines_step_2.setAlignment(Qt.AlignmentFlag.AlignRight|Qt.AlignmentFlag.AlignTrailing|Qt.AlignmentFlag.AlignVCenter)
         self.sb_number_lines_step_2.setMaximum(10000)
         self.sb_number_lines_step_2.setSingleStep(10)
         self.sb_number_lines_step_2.setValue(10)
@@ -375,7 +375,7 @@ class Ui_MainWindow(object):
 
         self.sb_number_ids_step_2 = QSpinBox(self.gb_functions_2)
         self.sb_number_ids_step_2.setObjectName(u"sb_number_ids_step_2")
-        self.sb_number_ids_step_2.setAlignment(Qt.AlignRight|Qt.AlignTrailing|Qt.AlignVCenter)
+        self.sb_number_ids_step_2.setAlignment(Qt.AlignmentFlag.AlignRight|Qt.AlignmentFlag.AlignTrailing|Qt.AlignmentFlag.AlignVCenter)
         self.sb_number_ids_step_2.setMaximum(100)
         self.sb_number_ids_step_2.setValue(1)
 
@@ -393,8 +393,8 @@ class Ui_MainWindow(object):
 
         self.ln_functions_6 = QFrame(self.gb_functions_2)
         self.ln_functions_6.setObjectName(u"ln_functions_6")
-        self.ln_functions_6.setFrameShadow(QFrame.Plain)
-        self.ln_functions_6.setFrameShape(QFrame.HLine)
+        self.ln_functions_6.setFrameShadow(QFrame.Shadow.Plain)
+        self.ln_functions_6.setFrameShape(QFrame.Shape.HLine)
 
         self.gridLayout_4.addWidget(self.ln_functions_6, 14, 0, 1, 2)
 
@@ -411,7 +411,7 @@ class Ui_MainWindow(object):
         MainWindow.setCentralWidget(self.centralwidget)
         self.menubar = QMenuBar(MainWindow)
         self.menubar.setObjectName(u"menubar")
-        self.menubar.setGeometry(QRect(0, 0, 1000, 22))
+        self.menubar.setGeometry(QRect(0, 0, 1000, 33))
         MainWindow.setMenuBar(self.menubar)
         self.statusbar = QStatusBar(MainWindow)
         self.statusbar.setObjectName(u"statusbar")

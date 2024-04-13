@@ -36,7 +36,7 @@
              </font>
             </property>
             <property name="lineWrapMode">
-             <enum>QPlainTextEdit::NoWrap</enum>
+             <enum>QPlainTextEdit::LineWrapMode::NoWrap</enum>
             </property>
             <property name="tabStopDistance">
              <double>40.000000000000000</double>
@@ -61,10 +61,10 @@
           <item row="4" column="1" colspan="2">
            <spacer name="vs_functions_1">
             <property name="orientation">
-             <enum>Qt::Vertical</enum>
+             <enum>Qt::Orientation::Vertical</enum>
             </property>
             <property name="sizeType">
-             <enum>QSizePolicy::Fixed</enum>
+             <enum>QSizePolicy::Policy::Fixed</enum>
             </property>
             <property name="sizeHint" stdset="0">
              <size>
@@ -92,7 +92,7 @@
           <item row="7" column="1" colspan="2">
            <spacer name="vs_functions_2">
             <property name="orientation">
-             <enum>Qt::Vertical</enum>
+             <enum>Qt::Orientation::Vertical</enum>
             </property>
             <property name="sizeHint" stdset="0">
              <size>
@@ -173,17 +173,17 @@
              <item row="9" column="0" colspan="2">
               <widget class="Line" name="ln_functions_2">
                <property name="frameShadow">
-                <enum>QFrame::Plain</enum>
+                <enum>QFrame::Shadow::Plain</enum>
                </property>
                <property name="orientation">
-                <enum>Qt::Horizontal</enum>
+                <enum>Qt::Orientation::Horizontal</enum>
                </property>
               </widget>
              </item>
              <item row="1" column="1">
               <widget class="QSpinBox" name="sb_number_lines_start">
                <property name="alignment">
-                <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+                <set>Qt::AlignmentFlag::AlignRight|Qt::AlignmentFlag::AlignTrailing|Qt::AlignmentFlag::AlignVCenter</set>
                </property>
                <property name="prefix">
                 <string>N</string>
@@ -216,10 +216,10 @@
              <item row="4" column="0" colspan="2">
               <widget class="Line" name="ln_functions_1">
                <property name="frameShadow">
-                <enum>QFrame::Plain</enum>
+                <enum>QFrame::Shadow::Plain</enum>
                </property>
                <property name="orientation">
-                <enum>Qt::Horizontal</enum>
+                <enum>Qt::Orientation::Horizontal</enum>
                </property>
               </widget>
              </item>
@@ -247,7 +247,7 @@
              <item row="6" column="1">
               <widget class="QSpinBox" name="sb_number_ids_start">
                <property name="alignment">
-                <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+                <set>Qt::AlignmentFlag::AlignRight|Qt::AlignmentFlag::AlignTrailing|Qt::AlignmentFlag::AlignVCenter</set>
                </property>
                <property name="prefix">
                 <string>IDS=</string>
@@ -280,7 +280,7 @@
              <item row="12" column="1">
               <widget class="QSpinBox" name="sb_tab_width">
                <property name="alignment">
-                <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+                <set>Qt::AlignmentFlag::AlignRight|Qt::AlignmentFlag::AlignTrailing|Qt::AlignmentFlag::AlignVCenter</set>
                </property>
                <property name="minimum">
                 <number>2</number>
@@ -299,7 +299,7 @@
              <item row="2" column="1">
               <widget class="QSpinBox" name="sb_number_lines_step">
                <property name="alignment">
-                <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+                <set>Qt::AlignmentFlag::AlignRight|Qt::AlignmentFlag::AlignTrailing|Qt::AlignmentFlag::AlignVCenter</set>
                </property>
                <property name="maximum">
                 <number>10000</number>
@@ -315,7 +315,7 @@
              <item row="7" column="1">
               <widget class="QSpinBox" name="sb_number_ids_step">
                <property name="alignment">
-                <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+                <set>Qt::AlignmentFlag::AlignRight|Qt::AlignmentFlag::AlignTrailing|Qt::AlignmentFlag::AlignVCenter</set>
                </property>
                <property name="maximum">
                 <number>100</number>
@@ -342,10 +342,10 @@
              <item row="14" column="0" colspan="2">
               <widget class="Line" name="ln_functions_3">
                <property name="frameShadow">
-                <enum>QFrame::Plain</enum>
+                <enum>QFrame::Shadow::Plain</enum>
                </property>
                <property name="orientation">
-                <enum>Qt::Horizontal</enum>
+                <enum>Qt::Orientation::Horizontal</enum>
                </property>
               </widget>
              </item>
@@ -366,7 +366,7 @@
           <item row="4" column="1" colspan="2">
            <spacer name="verticalSpacer">
             <property name="orientation">
-             <enum>Qt::Vertical</enum>
+             <enum>Qt::Orientation::Vertical</enum>
             </property>
             <property name="sizeHint" stdset="0">
              <size>
@@ -416,7 +416,7 @@
              </font>
             </property>
             <property name="lineWrapMode">
-             <enum>QPlainTextEdit::NoWrap</enum>
+             <enum>QPlainTextEdit::LineWrapMode::NoWrap</enum>
             </property>
             <property name="readOnly">
              <bool>true</bool>
@@ -472,17 +472,17 @@
              <item row="9" column="0" colspan="2">
               <widget class="Line" name="ln_functions_4">
                <property name="frameShadow">
-                <enum>QFrame::Plain</enum>
+                <enum>QFrame::Shadow::Plain</enum>
                </property>
                <property name="orientation">
-                <enum>Qt::Horizontal</enum>
+                <enum>Qt::Orientation::Horizontal</enum>
                </property>
               </widget>
              </item>
              <item row="1" column="1">
               <widget class="QSpinBox" name="sb_number_lines_start_2">
                <property name="alignment">
-                <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+                <set>Qt::AlignmentFlag::AlignRight|Qt::AlignmentFlag::AlignTrailing|Qt::AlignmentFlag::AlignVCenter</set>
                </property>
                <property name="prefix">
                 <string>N</string>
@@ -515,10 +515,10 @@
              <item row="4" column="0" colspan="2">
               <widget class="Line" name="ln_functions_5">
                <property name="frameShadow">
-                <enum>QFrame::Plain</enum>
+                <enum>QFrame::Shadow::Plain</enum>
                </property>
                <property name="orientation">
-                <enum>Qt::Horizontal</enum>
+                <enum>Qt::Orientation::Horizontal</enum>
                </property>
               </widget>
              </item>
@@ -546,7 +546,7 @@
              <item row="6" column="1">
               <widget class="QSpinBox" name="sb_number_ids_start_2">
                <property name="alignment">
-                <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+                <set>Qt::AlignmentFlag::AlignRight|Qt::AlignmentFlag::AlignTrailing|Qt::AlignmentFlag::AlignVCenter</set>
                </property>
                <property name="prefix">
                 <string>IDS=</string>
@@ -579,7 +579,7 @@
              <item row="12" column="1">
               <widget class="QSpinBox" name="sb_tab_width_2">
                <property name="alignment">
-                <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+                <set>Qt::AlignmentFlag::AlignRight|Qt::AlignmentFlag::AlignTrailing|Qt::AlignmentFlag::AlignVCenter</set>
                </property>
                <property name="minimum">
                 <number>2</number>
@@ -598,7 +598,7 @@
              <item row="2" column="1">
               <widget class="QSpinBox" name="sb_number_lines_step_2">
                <property name="alignment">
-                <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+                <set>Qt::AlignmentFlag::AlignRight|Qt::AlignmentFlag::AlignTrailing|Qt::AlignmentFlag::AlignVCenter</set>
                </property>
                <property name="maximum">
                 <number>10000</number>
@@ -614,7 +614,7 @@
              <item row="7" column="1">
               <widget class="QSpinBox" name="sb_number_ids_step_2">
                <property name="alignment">
-                <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+                <set>Qt::AlignmentFlag::AlignRight|Qt::AlignmentFlag::AlignTrailing|Qt::AlignmentFlag::AlignVCenter</set>
                </property>
                <property name="maximum">
                 <number>100</number>
@@ -641,10 +641,10 @@
              <item row="14" column="0" colspan="2">
               <widget class="Line" name="ln_functions_6">
                <property name="frameShadow">
-                <enum>QFrame::Plain</enum>
+                <enum>QFrame::Shadow::Plain</enum>
                </property>
                <property name="orientation">
-                <enum>Qt::Horizontal</enum>
+                <enum>Qt::Orientation::Horizontal</enum>
                </property>
               </widget>
              </item>
@@ -665,7 +665,7 @@
      <x>0</x>
      <y>0</y>
      <width>1000</width>
-     <height>22</height>
+     <height>33</height>
     </rect>
    </property>
   </widget>

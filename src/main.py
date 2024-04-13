@@ -8,7 +8,7 @@ from PySide6.QtGui import QFontDatabase, QGuiApplication
 from PySide6.QtWidgets import QApplication, QFileDialog, QLabel, QMainWindow
 from ui.MainWindow import Ui_MainWindow
 
-VERSION = "0.3.0"
+VERSION = "0.3.1"
 MSG_TIMEOUT = 3000
 
 
@@ -231,6 +231,7 @@ def main():
         Qt.HighDpiScaleFactorRoundingPolicy.Round
     )
     app = QApplication()
+    app.setStyle("WindowsVista")
     main_window = MainWindow()
     main_window.show()
     sys.exit(app.exec())
