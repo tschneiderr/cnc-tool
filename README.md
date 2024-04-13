@@ -8,6 +8,4 @@ Supports working with a single file or a complete folder.
 
 ## Usage
 
-Download the latest release from the [GitHub Releases page](https://github.com/tschneiderr/cnc-tool/releases).
-
-Unpack the folder and run `cnc-tool.exe`.
+Download the latest release from the [GitHub Releases page](https://github.com/tschneiderr/cnc-tool/releases) and run the executable.
